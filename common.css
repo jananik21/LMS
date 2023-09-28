@@ -1,0 +1,17 @@
+:root
+{
+    --pink: #f51983;
+    --white: #fff;
+    --black: #000;
+    --grey: #c2c2c2;
+    --blue: #000836;
+    --light-blue: #002866;
+}
+.text-white
+{
+    color: var(--white);
+}
+.text-cray
+{
+    color: #e6e6e6;
+}

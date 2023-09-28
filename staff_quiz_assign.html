@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Progress</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./common.css">
+    
+    <!-- Chart.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.6.0/dist/Chart.min.css">
+    
+    <style>
+      * {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.quiz-app {
+  background-color: #fff;
+  border: 10px solid #f6f6f6;
+  margin: 20px auto;
+  width: 800px;
+  padding: 15px;
+  border-radius: 20px;
+}
+
+.quiz-app .quiz-info {
+  display: flex;
+  padding: 20px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+}
+
+.quiz-app .quiz-info .category {
+  flex: 1;
+}
+
+.quiz-app .quiz-info .count {
+  flex: 1;
+  text-align: right;
+}
+
+.quiz-app .quiz-area {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.quiz-app .quiz-area h2 {
+  margin: 0;
+}
+
+.quiz-app .options-area {
+  background-color: #fff;
+  padding: 0 20px;
+  /* border-radius: 20px; */
+}
+
+.quiz-app .options-area .option {
+  background-color: #f6f6f6;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.quiz-app .options-area .option:hover {
+  background-color: #f0f0f0;
+}
+
+/* .quiz-app .options-area .option:not(:last-child) {
+  border-bottom: 1px solid #dfdfdf;
+} */
+
+.quiz-app .options-area .option input[type="Radio"]:checked+label {
+  color: #0055ff;
+}
+
+.quiz-app .options-area .option label {
+  cursor: pointer;
+  color: #444;
+  font-weight: bold;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+}
+
+.quiz-app .submit-button {
+  background-color: #0055ff;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 20px;
+  margin: 20px auto;
+}
+
+.quiz-app .submit-button:hover {
+  background-color: #003d80;
+}
+
+.quiz-app .submit-button:focus {
+  outline: none;
+}
+
+.quiz-app .bullets {
+  background-color: #f6f6f6;
+  display: flex;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.quiz-app .bullets .spans {
+  flex: 1;
+  display: flex;
+}
+
+.quiz-app .bullets .spans span {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.quiz-app .bullets .spans span.on {
+  background-color: #0055ff;
+}
+
+.quiz-app .results {
+  text-align: center;
+  font-size: 24px;
+}
+
+.quiz-app .results span {
+  font-weight: bold;
+}
+
+.quiz-app .results span.perfect {
+  color: #FFD700;
+}
+
+.quiz-app .results span.good {
+  color: #2ecc71;
+}
+
+.quiz-app .results span.fair {
+  color: #b3b0ad;
+}
+
+.quiz-app .results span.bad {
+  color: #c0392b;
+}
+    </style>
+    <body>
+      <!-- Updated navbar structure -->
+    <div class="js-navbar">
+      <nav class="uk-navbar-container">
+        <div class="uk-container">
+            <div uk-navbar>
+    
+                <div class="uk-navbar-left">
+    
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active">
+                            <a href="#" class="js-text-white uk-text-bold">
+                                <img src="./assets/brandlogo.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+    
+                </div>
+    
+                <div class="uk-navbar-right">
+    
+                  <div>
+                    <a href="https://www.linkedin.com/mwlite/in/jananik21" class="uk-icon-link uk-margin-small-right" uk-icon="icon: linkedin;  ratio: 2"></a>
+                    <a href="https://github.com/jananik21" class="uk-icon-link uk-margin-small-right" uk-icon="icon: github;ratio:2"></a>
+                </div>
+                        </li>
+                    </ul>
+    
+                </div>
+    
+            </div>
+        </div>
+    </nav>  
+    </div>
+    <body>
+      <div class="quiz-app">
+        <div class="quiz-info">
+          <div class="category">Category: <span></span></div>
+          <div class="count">Questions Count: <span></span></div>
+        </div>
+        <div class="quiz-area">
+          
+        </div>
+        <div class="options-area">
+    
+        </div>
+        <button class="submit-button">Submit Answer</button>
+        <div class="bullets">
+          <div class="spans"></div>
+          <div class="countdown"></div>
+        </div>
+        <div class="results">
+            
+        </div>
+      </div>
+        <!--Footer-->
+<div class="uk-section  uk-padding-small uk-padding-remove-bottom">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#000836" fill-opacity="1" d="M0,64L40,90.7C80,117,160,171,240,170.7C320,171,400,117,480,128C560,139,640,213,720,208C800,203,880,117,960,74.7C1040,32,1120,32,1200,42.7C1280,53,1360,75,1400,85.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+<footer class="lms-footer">
+<div class="footer-content">
+    <div class="footer-logo">
+        <img src="./assets/brandlogo.png" alt="LMS Logo">
+       
+    </div>
+    <div class="footer-links">
+        <h3 class="text-white">Quick Links</h3>
+        <ul class="uk-list uk-list-hyphen">
+            <li><a href="#" class="text-cray">Home</a></li>
+            <li><a href="student_login.html" class="text-cray">Student Login</a></li>
+            <li><a href="staff_login.html" class="text-cray">Staff Login</a></li>
+            <li><a href="#" class="text-cray">Progress tracking</a></li>
+        </ul>
+    </div>
+     <div class="features">
+        <h3 class="text-white">Features</h3>
+         <ul>
+            <li class="text-cray">Live sessions</li>
+            <li class="text-cray">Expertise solutions</li>
+            <li class="text-cray">Free courses</li>
+         </ul>
+     </div>
+    <div class="footer-contact">
+      <h3 class="text-white">Contact Us</h3>
+      <ul class="uk-list uk-list-hyphen">
+          <li class="text-cray">Email: jananikuppuraj@gmail.com</li>
+          <li class="text-cray">Phone: +91 7538831121</li>
+       </ul>
+    </div>
+    </div>
+<hr><div class="footer-copyright uk-text-center">
+    Developed by Janani| Rathinam Technical Campus
+</div>
+</div>
+</footer>
+    <!--Footer end-->
+    </body>
+<script>
+  // Query selectors
+let quizInfo = document.querySelector(".quiz-info")
+let countSpan = document.querySelector(".count span")
+let bullets = document.querySelector(".bullets")
+let categorySpan = document.querySelector(".category span")
+let bulletsSpanContainer = document.querySelector(".bullets .spans")
+let quizArea = document.querySelector(".quiz-area")
+let optionsArea = document.querySelector(".options-area")
+let submitButton = document.querySelector(".submit-button")
+let countdownDiv = document.querySelector(".countdown")
+let resultsDiv = document.querySelector(".results")
+
+// Variables
+let currentIndex = 0
+let rigthAnswers = 0
+let countdownInterval = 0
+
+//Functions to get the questions from JSON File
+function getQuestions() {
+  let myRequest = new XMLHttpRequest()
+
+  myRequest.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      let questionsObject = JSON.parse(this.responseText)
+      let questionsCount = questionsObject.questions.length
+
+      createBullets(questionsCount)
+
+      categoryName(questionsObject.questions[currentIndex].category, questionsCount)
+
+      addQuestionData(questionsObject.questions[currentIndex], questionsCount)
+
+      countdown(600, questionsCount)
+
+      submitButton.onclick = () => {
+        let theRightAnswer = questionsObject.questions[currentIndex].right_answer
+        currentIndex++
+
+        checkAnswer(theRightAnswer, questionsCount)
+
+        quizArea.innerHTML = ""
+        optionsArea.innerHTML = ""
+
+        addQuestionData(questionsObject.questions[currentIndex], questionsCount)
+
+        handleBullets()
+
+        showResults(questionsCount)
+
+      }
+    }
+  };
+
+  myRequest.open("GET", "https://mohamedkhalifa11.github.io/Qweb/webDevlopement_questions.json", true)
+  myRequest.send()
+}
+
+getQuestions(); // To call getQuestions function
+
+// Make circles to know which question you are now in the quiz
+function createBullets(num) {
+  countSpan.innerHTML = num
+
+  for (let i = 0; i < num; i++) {
+    let theBullet = document.createElement("span");
+
+    if (i === 0) {
+      theBullet.className = "on"
+    }
+
+    bulletsSpanContainer.appendChild(theBullet)
+  }
+}
+
+// To add category name from JSON File
+function categoryName(category) {
+  categorySpan.innerHTML = category
+}
+
+// Function addQuestionData to add questions and options into the web app
+function addQuestionData(obj, count) {
+  if (currentIndex < count) {
+    let questionTitle = document.createElement("h2")
+    let questionText = document.createTextNode(obj.question)
+
+    questionTitle.appendChild(questionText)
+    quizArea.appendChild(questionTitle)
+
+    for (let i = 0; i < 4; i++) {
+      let mainDiv = document.createElement("div")
+      mainDiv.className = "option"
+
+      let radioInput = document.createElement("input")
+      radioInput.name = "options"
+      radioInput.type = "radio"
+      radioInput.id = `option_${i}`
+      radioInput.dataset.option = obj.options[i]
+
+      theLabel = document.createElement("label")
+      theLabel.htmlFor = `option_${i}`
+
+      theLabelText = document.createTextNode(obj.options[i])
+
+      theLabel.appendChild(theLabelText)
+      mainDiv.appendChild(radioInput)
+      mainDiv.appendChild(theLabel)
+      optionsArea.appendChild(mainDiv)
+    }
+    categoryName(obj.category) // Call categoryName Function
+  }
+}
+// To check the answers from the user
+function checkAnswer(rAnswer, count) {
+  let options = document.getElementsByName("options")
+  let choosenAnswer;
+
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].checked) {
+      choosenAnswer = options[i].dataset.option
+    }
+  }
+  if (rAnswer === choosenAnswer) {
+    rigthAnswers++;
+  }
+}
+// To color the circle to show you the number of the quiz question
+function handleBullets() {
+  let bulletsSpans = document.querySelectorAll(".bullets .spans span")
+  let arrayOfSpans = Array.from(bulletsSpans)
+  arrayOfSpans.forEach((span, index) => {
+    if (currentIndex === index) {
+      span.className = "on"
+    }
+  })
+}
+
+/*
+  This function used after the quiz is finished 
+  It Delete all quiz content and show the user result
+*/
+function showResults(count) {
+  let theResults;
+  if (currentIndex === count) {
+    quizArea.remove()
+    optionsArea.remove()
+    submitButton.remove()
+    bullets.remove()
+    quizInfo.remove()
+
+    if (rigthAnswers === count) {
+      theResults = `<span class="perfect">Perfect</span>, All answers are correct ${rigthAnswers} from ${count}`
+    }
+    else if (rigthAnswers < count && rigthAnswers > count / 2) {
+      theResults = `<span class="good">Good</span>, ${rigthAnswers} from ${count} are correct`
+    }
+    else if (rigthAnswers === count / 2) {
+      theResults = `<span class="fair">Fair</span>, Just half of answers are correct ${rigthAnswers} from ${count} is Right`
+    }
+    else {
+      theResults = `<span class="bad">Bad Result</span>, ${rigthAnswers} from ${count} are correct`
+    }
+
+    resultsDiv.innerHTML = theResults
+  }
+}
+
+function countdown(duration, count) {
+  if (currentIndex < count) {
+    let minutes, seconds
+    countdownInterval = setInterval(() => {
+      minutes = parseInt(duration / 60)
+      seconds = parseInt(duration % 60)
+
+      minutes = minutes < 10 ? `0${minutes}` : minutes
+      seconds = seconds < 10 ? `0${seconds}` : seconds
+
+      countdownDiv.style.fontWeight = 'bold'
+
+      if (duration < 60) {
+        countdownDiv.style.color = 'red';
+      }
+
+      countdownDiv.innerHTML = `${minutes}:${seconds}`
+
+      if (--duration < 0) {
+        clearInterval(countdownInterval)
+        // showResults(count)
+        for (let i = 0; i < count - currentIndex + i; i++) {
+          console.log(`Count: ${count}`)
+          console.log(`current Index: ${currentIndex}`)
+          submitButton.click();
+        }
+      }
+    }, 1000)
+  }
+}
+</script>

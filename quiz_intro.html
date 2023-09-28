@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Quiz</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./common.css">
+    <!-- counter js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Center align the main content */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        /* Style the card for quiz instructions */
+        .quiz-card {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .start-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: var(--blue);
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .start-button:hover {
+            background-color: #002866;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <div class="js-navbar">
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active">
+                                <a href="#" class="js-text-white uk-text-bold">
+                                    <img src="./assets/brandlogo.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <div>
+                            <a href="https://www.linkedin.com/mwlite/in/jananik21" class="uk-icon-link uk-margin-small-right" uk-icon="icon: linkedin;  ratio: 2"></a>
+                            <a href="https://github.com/jananik21" class="uk-icon-link uk-margin-small-right" uk-icon="icon: github;ratio:2"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- navbar end -->
+
+    <!-- Center-aligned container for quiz instructions -->
+    <div class="container">
+        <div class="quiz-card">
+            <h1>Quiz Instructions</h1>
+            <p>Welcome to our quiz! Please read the instructions below before starting:</p>
+            <ol>
+                <li>This quiz consists of multiple-choice questions.</li>
+                <li>You will have a limited time to answer each question.</li>
+                <li>Click on your chosen answer for each question.</li>
+                <li>Once you click the "Submit" button, you cannot change your answer.</li>
+                <li>Your score will be displayed at the end of the quiz.</li>
+            </ol>
+            <a href="staff_quiz_assign.html" class="start-button">Start Quiz</a>
+        </div>
+    </div>
+</body>
+</html>

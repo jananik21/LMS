@@ -1,0 +1,28 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Student Dashboard</h1>
+
+    <?php
+    // Check if the session variables for course data are set
+    if (isset($_SESSION['course_name'], $_SESSION['course_type'], $_SESSION['course_document'], $_SESSION['course_link'])) {
+        // Display the uploaded course data
+        echo "<p>Course Name: " . $_SESSION['course_name'] . "</p>";
+        echo "<p>Course Type: " . $_SESSION['course_type'] . "</p>";
+        echo "<p>Course Document: <a href='uploads/" . $_SESSION['course_document'] . "' target='_blank'>" . $_SESSION['course_document'] . "</a></p>";
+        echo "<p>Course Link: " . $_SESSION['course_link'] . "</p>";
+    } else {
+        echo "Course data not found. Please upload a course first.";
+    }
+    ?>
+
+    <!-- Add your dashboard content here -->
+
+</body>
+</html>

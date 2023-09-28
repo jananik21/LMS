@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Assignment Assign</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./common.css">
+    <!-- counter js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; 
+            margin: 0; 
+        }
+         .button-container button {
+            width: 300px; 
+            margin-bottom: 10px;
+            height: 100px;
+          }
+        .js-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffff; 
+            z-index: 1000; 
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        #button1 {
+            background-color: #3366cc; 
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        #button2 {
+            background-color: #ff9900;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        #button3 {
+            background-color: #dc3912;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        #button1:hover {
+            background-color: #005ca9; 
+        }
+
+        #button2:hover {
+            background-color: #ff7d00; 
+        }
+
+        #button3:hover {
+            background-color: #c62d09; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="js-navbar">
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active">
+                                <a href="#">
+                                    <img src="./assets/brandlogo.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>  
+    </div>
+    <h2>ASSIGN TO</h2>
+    <!-- End Navbar -->
+    <div class="button-container">
+      <a href="ass_beg.php"><button id="button1">Beginner</button></a>
+      <a href="ass_int.php"><button id="button2">Intermediate</button></a>
+      <a href="ass_adv.php"><button id="button3">Advanced</button></a>
+  </div>
+  
+  </div>
+</body>
+</html>

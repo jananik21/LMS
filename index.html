@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Janani Studysync 
+    </title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./common.css">
+    <!-- counter js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <!-- navbar -->
+    <div class="js-navbar">
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div uk-navbar>
+        
+                    <div class="uk-navbar-left">
+        
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active">
+                                <a href="#" class="js-text-white uk-text-bold">
+                                    <img src="./assets/brandlogo.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+        
+                    </div>
+        
+                    <div class="uk-navbar-right">
+        
+                                <a href="./login.html" class="js-text-white uk-text-capitalize">
+                                    <button class="uk-button uk-button-danger">Login</button>
+                                </a>
+                            </li>
+                        </ul>
+        
+                    </div>
+        
+                </div>
+            </div>
+        </nav>  
+    </div>
+    <!-- navbar end -->
+    <!-- slider -->
+    <div class="js-banner-slider">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="min-height: 300; max-height: 600; animation: push">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <img src="./assets/Slider1.jpg" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="./assets/slider2.jpg" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="./assets/slider3.jpg" alt="" uk-cover>
+                </li>
+            </ul>
+        </div>
+    </div>    
+    <!-- slider end -->
+     
+    <!-- course -->
+    <div class="uk-section uk-section-muted">
+        <div class="uk-container">
+            <div class="heading">
+                <h2>
+                    Popular Courses
+                </h2>
+            </div>
+            <div class="js-course-card">
+                <div uk-slider>
+
+                    <div class="uk-position-relative">
+                
+                        <div class="uk-slider-container uk-light">
+                            <ul class="uk-slider-items uk-child-width-1-2@s uk-child-width-1-3@m uk-grid">
+                                <li>
+                                    <div class="uk-card uk-card-default">
+                                        <div class="uk-card-media-top">
+                                            <img src="./assets/datascience.jpg" width=1800" height="1200" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h3 class="uk-card-title">Data Science</h3>
+                                            <p> Teaches the approach that combines principles and practices from the fields of mathematics, statisticsto analyze large amounts of data..</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="uk-card uk-card-default">
+                                        <div class="uk-card-media-top">
+                                            <img src="./assets/cloudcomputing.jpg" width="1800" height="1200" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h3 class="uk-card-title">Cloud Computing</h3>
+                                            <p> Learning of computing services—including servers, storage, databases, networking, software, analytics, and intelligence over the Internet.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="uk-card uk-card-default">
+                                        <div class="uk-card-media-top">
+                                            <img src="./assets/cybersecurity.jpg" width="1800" height="1200" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h3 class="uk-card-title">Cyber Security</h3>
+                                            <p>Teaches the practice of defending computers, servers, mobile devices, electronic systems, networks, and data from malicious attacks.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="uk-card uk-card-default">
+                                        <div class="uk-card-media-top">
+                                            <img src="./assets/web development.jpg" width="1800" height="1200" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h3 class="uk-card-title">Web Development</h3>
+                                            <p>Helps in creating, building, and maintaining of websites. It includes aspects such as web design, web publishing and database management.</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- course end -->
+    <!--Counter-->
+    <div class="uk-section">
+        <div class="uk-container">
+            <div class="uk-child-width-1-4@m uk-child-width-1-2" uk-grid>
+                <div>
+                    <div class="counter">
+                        <span class="counter-value">577</span> 
+                        <h3>Students</h3>
+                    </div>
+                </div>
+                    <div class="counter">
+                        <span class="counter-value">75</span> 
+                        <h3>Staff</h3>
+                    </div>
+                <div class="counter">
+                    <span class="counter-value">45</span> 
+                    <h3>Courses</h3>
+                </div>
+                <div>
+                    <div class="counter">
+                        <span class="counter-value">200</span> 
+                        <h3>Completed Students</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--counter end-->
+    
+<!--counter end-->
+<!--Facility-->
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+            <ul class="uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@m uk-grid">
+                <li>
+                    <div class="uk-inline">
+                        <img src="./assets/facility3.jpg" width="1800" height="1200" alt="">
+                        <div class="uk-overlay-primary uk-position-cover"></div>
+                        <div class="uk-overlay uk-position-bottom uk-light">
+                            <p>Online courses</p>
+                        </div>
+                    </div>
+                    
+                </li>
+                <li>
+                    <div class="uk-inline">
+                        <img src="./assets/facility2.jpg" width="1800" height="1200" alt="">
+                        <div class="uk-overlay-primary uk-position-cover"></div>
+                        <div class="uk-overlay uk-position-bottom uk-light">
+                            <p>24*7 support system.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-inline">
+                        <img src="./assets/facility3.jpg" width="1800" height="1200" alt="">
+                        <div class="uk-overlay-primary uk-position-cover"></div>
+                        <div class="uk-overlay uk-position-bottom uk-light">
+                            <p>Excellent features.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-inline">
+                        <img src="./assets/facility4.jpg" width="1800" height="1200" alt="">
+                        <div class="uk-overlay-primary uk-position-cover"></div>
+                        <div class="uk-overlay uk-position-bottom uk-light">
+                            <p>Live classes.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-inline">
+                        <img src="./assets/facility5.jpg" width="1800" height="1200" alt="">
+                        <div class="uk-overlay-primary uk-position-cover"></div>
+                        <div class="uk-overlay uk-position-bottom uk-light">
+                            <p>Expert Guidelines.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        
+            <a class="uk-position-center-left uk-position-small " href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next uk-slider-item="next"></a>
+        
+        </div>
+    </div>
+</div>
+ <!---Facility end-->
+ <!--Footer-->
+<div class="uk-section  uk-padding-small uk-padding-remove-bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#000836" fill-opacity="1" d="M0,64L40,90.7C80,117,160,171,240,170.7C320,171,400,117,480,128C560,139,640,213,720,208C800,203,880,117,960,74.7C1040,32,1120,32,1200,42.7C1280,53,1360,75,1400,85.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+<footer class="lms-footer">
+  <div class="footer-content">
+      <div class="footer-logo">
+          <img src="./assets/brandlogo.png" alt="LMS Logo">
+         
+      </div>
+      <div class="footer-links">
+          <h3 class="text-white">Quick Links</h3>
+          <ul class="uk-list uk-list-hyphen">
+              <li><a href="#" class="text-cray">Home</a></li>
+              <li><a href="student_login.html" class="text-cray">Student Login</a></li>
+              <li><a href="staff_login.html" class="text-cray">Staff Login</a></li>
+              <li><a href="#" class="text-cray">Progress tracking</a></li>
+          </ul>
+      </div>
+       <div class="features">
+          <h3 class="text-white">Features</h3>
+           <ul>
+              <li class="text-cray">Live sessions</li>
+              <li class="text-cray">Expertise solutions</li>
+              <li class="text-cray">Free courses</li>
+           </ul>
+       </div>
+      <div class="footer-contact">
+        <h3 class="text-white">Contact Us</h3>
+        <ul class="uk-list uk-list-hyphen">
+            <li class="text-cray">Email: jananikuppuraj@gmail.com</li>
+            <li class="text-cray">Phone: +91 7538831121</li>
+         </ul>
+      </div>
+      </div>
+  <hr><div class="footer-copyright uk-text-center">
+      Developed by Janani| Rathinam Technical Campus
+  </div>
+</div>
+</body>
+</footer>
+  <!--Footer end-->
+</body>
+  </html>
+  <script>
+    $(document).ready(function(){
+$('.counter-value').each(function(){
+    $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+    },{
+        duration: 3500,
+        easing: 'swing',
+        step: function (now){
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+});
+</script>

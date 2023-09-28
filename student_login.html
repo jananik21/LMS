@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration</title>
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./common.css">
+<!-- Counter JS -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<style>
+    
+     .uk-navbar-container:not(.uk-navbar-transparent) {
+      background: var(--blue);
+  }
+    .js-navbar {
+        position: relative;
+        z-index: 10; 
+    }
+
+    .container { 
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+    }
+
+    .content {
+        background-color: white;
+        width: 800px;
+        padding: 20px;
+        margin-top: -50px; 
+    }
+
+    img {
+        width: 100%;
+        height: 55%;
+    }
+
+    .form-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center; 
+        text-decoration: underline; 
+    }
+
+    .box-content {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        width: 100%;
+        margin: 8px 0;
+        padding: 0px 0;
+    }
+
+    input[type="number"] {
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        margin: 8px 0;
+        padding: 5px 0;
+    }
+
+    input:hover {
+        background-color:var(--lightblue);
+    }
+
+    select {
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        margin: 8px 0;
+        padding: 5px 0;
+        width: 50%;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    button {
+        color: #ffffff;
+        background-color: var(--blue);
+        height: 40px;
+        width: 25%;
+        margin-top: 15px;
+        cursor: pointer;
+        border: none;
+        border-radius: 2%;
+        outline: none;
+        text-align: center;
+        font-size: 16px;
+        text-decoration: none;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        background-color: #333333;
+    }
+</style>
+</head>
+<body>
+<!-- navbar -->
+<div class="js-navbar">
+<nav class="uk-navbar-container">
+<div class="uk-container">
+<div uk-navbar>
+<div class="uk-navbar-left">
+<ul class="uk-navbar-nav">
+    <li class="uk-active">
+        <a href="#" class="js-text-white uk-text-bold">
+            <img src="./assets/brandlogo.png" alt="">
+        </a>
+    </li>
+</ul>
+</div>
+<div class="uk-navbar-right">
+
+<div>
+    <a href="https://www.linkedin.com/in/jananik21/" class="uk-icon-link uk-margin-small-right" uk-icon="icon: linkedin;  ratio: 2"></a>
+    <a href="https://github.com/jananik21" class="uk-icon-link uk-margin-small-right" uk-icon="icon: github;ratio:2"></a>
+</div>
+        </li>
+    </ul>
+
+</div>
+</div>
+</div>
+</nav>  
+</div>
+<!-- navbar end -->
+</div>
+<!-- navbar end -->
+<!--Student register-->
+<div class="container">
+<div class="content">
+<img src="./assets/student_reg.avif" alt="" srcset="">
+<h2 class="form-title">Student Registration</h2>
+<form action="./student_login_insert.php" method="post">
+<div class="box-content">
+<label for="Name">Name</label>
+<input type="text" maxlength="32" pattern="[A-Za-z]+ " name="Student_Name" required>
+</div>
+<div class="box-content">
+<label>Phone Number</label>
+<input type="text" name="PhoneNumber" required pattern="[0-9]+" title="Please enter a valid phone number with numbers only">
+
+</div>
+<div class="box-content">
+<label>Course Level</label>
+<select name="CourseLevel" required>
+<option value ="Select">Select</option>
+<option value="Beginner">Beginner</option>
+<option value="Intermediate">Intermediate</option>
+<option value="Advanced">Advanced</option>
+</select>
+</div>
+<div class="box-content">
+<label>Register Number</label>
+<input type="text" name="RegisterNumber" required>
+</div>
+<div class="field">
+<label>Email Address</label>
+<input type="text"  pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2, }$" name = "EmailAddress" required>
+</div>   
+<div class="field">
+<label>Password</label>
+<input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" name = "Student_Password">
+</div> 
+<div class="button-container">
+<button type="submit">Submit</button>
+</div>
+
+</form>
+</div>
+</div> 
+</div> 
+<!--Student registration end-->
+<div class="uk-section  uk-padding-small uk-padding-remove-bottom">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220"><path fill="#000836" fill-opacity="1" d="M0,64L40,90.7C80,117,160,171,240,170.7C320,171,400,117,480,128C560,139,640,213,720,208C800,203,880,117,960,74.7C1040,32,1120,32,1200,42.7C1280,53,1360,75,1400,85.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+<footer class="lms-footer">
+<div class="footer-content">
+    <div class="footer-logo">
+        <img src="./assets/brandlogo.png" alt="LMS Logo">
+        
+    </div>
+    <div class="footer-links">
+        <h3 class="text-white">Quick Links</h3>
+        <ul class="uk-list uk-list-hyphen">
+            <li><a href="#" class="text-cray">Home</a></li>
+            <li><a href="student_login.html" class="text-cray">Student Login</a></li>
+            <li><a href="staff_login.html" class="text-cray">Staff Login</a></li>
+            <li><a href="#" class="text-cray">Progress tracking</a></li>
+        </ul>
+    </div>
+    <div class="features">
+        <h3 class="text-white">Features</h3>
+        <ul>
+            <li class="text-cray">Live sessions</li>
+            <li class="text-cray">Expertise solutions</li>
+            <li class="text-cray">Free courses</li>
+        </ul>
+    </div>
+    <div class="footer-contact">
+        <h3 class="text-white">Contact Us</h3>
+        <ul class="uk-list uk-list-hyphen">
+            <li class="text-cray">Email: jananikuppuraj@gmail.com</li>
+            <li class="text-cray">Phone: +91 7538831121</li>
+        </ul>
+    </div>
+    </div>
+<hr><div class="footer-copyright uk-text-center">
+    Developed by Janani| Rathinam Technical Campus
+</div>
+</div>
+</footer>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+ var updateForm = document.querySelector("#updateForm");
+ var updateResult = document.querySelector("#updateResult");
+ var updateSuccessMessage = document.querySelector("#updateSuccessMessage"); // Define the success message element
+
+ updateForm.addEventListener("submit", function (event) {
+     event.preventDefault();
+     var formData = new FormData(updateForm);
+
+     // Send the data to the server using AJAX
+     var xhr = new XMLHttpRequest();
+     xhr.open("POST", "student_login_insert.php", true);
+     xhr.onreadystatechange = function () {
+         if (xhr.readyState === 4 && xhr.status === 200) {
+             var response = JSON.parse(xhr.responseText);
+             if (response.success) {
+                 updateSuccessMessage.style.display = "block"; // Display the success message
+             } else {
+                 updateResult.innerHTML = "Error: " + response.message;
+             }
+         }
+     };
+     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+     xhr.send(new URLSearchParams(formData));
+ });
+});
+
+ </script>

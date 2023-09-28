@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Progress</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./common.css">
+    
+    <!-- Chart.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.6.0/dist/Chart.min.css">
+    
+    <style>
+        /* Page Layout */
+        body {
+            background-color: #f5f5f5;
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color:var(--blue);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            height: 70px;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 0%;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container">
+            <img src="./assets/brandlogo.png" alt="">
+            <h1>Your Students' Progress This Year</h1>
+        </div>
+    </div>
+    <!-- End Navbar -->
+
+    <!-- Chart Container -->
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="progressChart" width="500" height="150"></canvas>
+        </div>
+    </div>
+    <!-- End Chart Container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const months = ["March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const progressionData = [35, 75, 60, 30, 80, 95, 55, 30, 80, 65, 85];
+    
+        // Create a bar chart
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Progression',
+                    data: progressionData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)', // Bar color
+                    borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                    borderWidth: 3,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100, // Set the maximum value on the y-axis
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false, // Hide the legend
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

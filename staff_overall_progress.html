@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.26/dist/js/uikit-icons.min.js"></script>
+    
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./common.css">
+    
+    <!-- counter js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <style>
+        /* Reduce the height of each bar */
+        canvas#progressChart {
+            height: 50px; /* Adjust the height as needed */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="js-navbar">
+        <nav class="uk-navbar-container">
+            <div class="uk-container">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active">
+                                <a href="#" class="js-text-white uk-text-bold">
+                                    <img src="./assets/brandlogo.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+        
+                        <ul class="uk-navbar-nav">
+                            <li class="uk-active">
+                               Your students progress in 2023!
+                            </li>
+                        </ul>
+        
+                    </div>
+                </div>
+            </div>
+        </nav>  
+    </div>
+    <!-- End Navbar -->
+
+    <!-- Chart Container -->
+    <div class="chart-container">
+        <canvas id="progressChart" width="500" height="150"></canvas>
+    </div>
+    <!-- End Chart Container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const months = ["March", "April", "May", "June", "July", "August","September","October","November","December"];
+        const progressionData = [35, 75, 60, 30, 80, 95,55,30,80,65,85];
+    
+        // Create a bar chart
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Progression',
+                    data: progressionData,
+                    backgroundColor: 'rgba(75, 192, 192, 0.5)', // Bar color
+                    borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                    borderWidth: 3,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100, // Set the maximum value on the y-axis
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false, // Hide the legend
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
