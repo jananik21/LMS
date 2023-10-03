@@ -174,10 +174,6 @@ $conn->close();
     <div class="submit">
         <input class="btn-success" type="submit" value="Update Profile">
     </div>
-    <div class="submit">
-    <a href="delete_confirm.html">
-    <button class="btn-success" type="button">Delete Account</button>
-</a>
 
 </div>
 </form>
